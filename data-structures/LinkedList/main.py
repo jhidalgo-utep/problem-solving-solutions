@@ -19,3 +19,8 @@ class Node(object):
     def set_data(self, newItem):
         self.data = newItem
         
+class LinkedList(object):
+    def __init__(self, head = None, tail = None):
+        self.head = head
+        self.tail = tail
+        
