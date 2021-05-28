@@ -6,19 +6,20 @@ Created on Tue May 25 09:43:21 2021
 """
 
 from LinkedList import LinkedList
-        
-
-print("TOPPPPPP \n")
-
-LL = LinkedList()
-print( LL.isEmpty2() )
-
-LL.insert2(55)
-LL.insert2(33)
-
-print( LL.isEmpty2() )
-
-LL.printLL2()
 
 
+#Main Method
+if __name__ == "__main__":
 
+    print("Begin main program...\n")
+    
+    LL = LinkedList() #init data struc
+    
+    print( LL.isEmpty() ) 
+
+    LL.insert(55) 
+    LL.insert(33)
+    
+    print( LL.isEmpty() )
+    
+    LL.printList() 
