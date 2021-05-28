@@ -5,7 +5,7 @@ Created on Tue May 27 21:32:34 2021
 @author: joaquin
 """
 
-#Node Class
+
 class Node(object):
     
     #Constructor takes in 2 optional parameters 'data' and 'next'. default parameters are 'None'
