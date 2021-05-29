@@ -37,3 +37,15 @@ class LinkedList(object):
         while iter != None:
             print(iter.data)
             iter = Node.get_next(iter)
+            
+    def get_head_data(self):
+        return self.head.data
+    
+    def get_tail_data(self):
+        return self.tail.data
+    
+    def get_head_node(self):
+        return self.head
+    
+    def get_tail_node(self):
+        return self.tail
