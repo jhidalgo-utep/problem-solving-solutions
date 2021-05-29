@@ -23,3 +23,5 @@ if __name__ == "__main__":
     print( LL.isEmpty() )
     
     LL.printList() 
+
+    print(LL.get_head_data() )
