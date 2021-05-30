@@ -38,14 +38,18 @@ class LinkedList(object):
             print(iter.data)
             iter = Node.get_next(iter)
             
+    #Method takes in a LinkedList and returns the data of the head node
     def get_head_data(self):
         return self.head.data
     
+    #Method takes in a LinkedList and returns the data of the tail node
     def get_tail_data(self):
         return self.tail.data
     
+    #Method takes in a LinkedList and returns the address of the head node
     def get_head_node(self):
         return self.head
     
+    #Method takes in a LinkedList and returns the address of the tail node
     def get_tail_node(self):
         return self.tail
