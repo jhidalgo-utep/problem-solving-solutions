@@ -58,6 +58,3 @@ class LinkedList(object):
     #Method takes in a LinkedList and returns the address of the tail node
     def get_tail_node(self):
         return self.tail
-    
-    def reverse_list(self):
-        
