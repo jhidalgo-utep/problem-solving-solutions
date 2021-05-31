@@ -7,6 +7,9 @@ Created on Tue May 25 09:43:21 2021
 
 from LinkedList import LinkedList
 
+# Use 'x = LinkedList()' to create a Linked List to manipulate. 
+# Then be able to use methods from LinkedList.py class like: 'x.isEmpty()'.
+
 
 #Main Method
 if __name__ == "__main__":

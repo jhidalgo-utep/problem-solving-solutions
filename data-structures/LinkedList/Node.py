@@ -5,6 +5,9 @@ Created on Tue May 27 21:32:34 2021
 @author: joaquin
 """
 
+# Self Explanation:
+# The parameter 'self' is known as the node to be used like: 'node.data' and 'node.next'
+
 
 class Node(object):
     
