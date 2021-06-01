@@ -40,7 +40,7 @@ class LinkedList(object):
             return
         iter = self.head
         while iter != None:
-            print(iter.data)
+            print( Node.get_data(iter) )
             iter = Node.get_next(iter)
             
     #Method takes in a LinkedList and returns the data of the head node
