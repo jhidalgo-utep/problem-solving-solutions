@@ -11,9 +11,7 @@ from LinkedList import LinkedList
 # Then be able to use methods from LinkedList.py class like: 'x.isEmpty()'.
 
 
-#Main Method
-if __name__ == "__main__":
-
+def main():
     print("Begin main program...\n")
     
     LL = LinkedList() #init data struc
@@ -28,3 +26,10 @@ if __name__ == "__main__":
     LL.printList() 
 
     print(LL.get_head_data() )
+    
+
+
+#Main Method
+if __name__ == "__main__":
+
+    main()
