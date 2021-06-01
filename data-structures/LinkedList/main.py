@@ -7,10 +7,7 @@ Created on Tue May 25 09:43:21 2021
 
 from LinkedList import LinkedList
 
-
-#Main Method
-if __name__ == "__main__":
-
+def main():
     print("Begin main program...\n")
     
     LL = LinkedList() #init data struc
@@ -25,3 +22,10 @@ if __name__ == "__main__":
     LL.printList() 
 
     print(LL.get_head_data() )
+    
+
+
+#Main Method
+if __name__ == "__main__":
+
+    main()
