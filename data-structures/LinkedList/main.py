@@ -25,7 +25,8 @@ def main():
     
     LL.printList() 
 
-    print(LL.get_head_data() )
+    
+    print(LL.getListLength() )
     
 
 
