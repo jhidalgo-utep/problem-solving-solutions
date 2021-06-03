@@ -67,10 +67,7 @@ class LinkedList(object):
             
             
     #Getters
-<<<<<<< HEAD
-=======
     #Method takes in a LinkedList and returns the data of the head node
->>>>>>> 814618ca7c34e3b3ae1d09ea0074167154ce02bb
     def get_head_data(self):
         return self.head.data
     
