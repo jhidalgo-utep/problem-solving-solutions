@@ -7,6 +7,11 @@ Created on Tue May 27 21:34:02 2021
 
 from Node import Node
 
+# Self explanation:
+# When 'self' is being passed as a parameter, 'self' is the list. 
+# You can use operations like: 'self.head' & 'self.tail' to get a Node from the list.
+# Also by putting 'Node. ' you are able to use operations from the Node.py class like: 'Node.get_next(self.head)' 
+
 
 class LinkedList(object):
     
@@ -62,14 +67,18 @@ class LinkedList(object):
             
             
     #Getters
+    #Method takes in a LinkedList and returns the data of the head node
     def get_head_data(self):
         return self.head.data
     
+    #Method takes in a LinkedList and returns the data of the tail node
     def get_tail_data(self):
         return self.tail.data
     
+    #Method takes in a LinkedList and returns the address of the head node
     def get_head_node(self):
         return self.head
     
+    #Method takes in a LinkedList and returns the address of the tail node
     def get_tail_node(self):
         return self.tail

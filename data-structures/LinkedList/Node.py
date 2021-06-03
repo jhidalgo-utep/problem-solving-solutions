@@ -5,6 +5,9 @@ Created on Tue May 27 21:32:34 2021
 @author: joaquin
 """
 
+# Self Explanation:
+# The parameter 'self' is known as the node to be used like: 'node.data' and 'node.next'
+
 
 class Node(object):
     
@@ -20,12 +23,11 @@ class Node(object):
     #Method takes in a node as a parameter and returns the data
     def get_data(self):
         return self.data
-    
-    #Method takes in a node and integer to update the 'data' and returns nothing
-    def set_data(self, newItem):
-        self.data = newItem
         
     #Method takes in 2 nodes one for self and another to set the next node and returns nothing
     def set_next(self, nextNode):
         self.next = nextNode
-        
+     
+    #Method takes in a node and integer to update the 'data' and returns nothing
+    # def set_data(self, newItem):
+    #     self.data = newItem
