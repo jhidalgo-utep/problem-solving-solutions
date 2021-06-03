@@ -38,11 +38,35 @@ class LinkedList(object):
         if LinkedList.isEmpty(self):
             print("EMPTY LINKED LIST")
             return
-        iter = self.head
-        while iter != None:
-            print( Node.get_data(iter) )
-            iter = Node.get_next(iter)
+        iter_node = self.head
+        while iter_node != None:
+            print(iter_node.data)
+            iter_node = Node.get_next(iter_node)
+    
+    #Method takes in a list and returns an integer length of list
+    def getListLength(self):
+        list_length = 0
+        iter_node = self.head
+        while iter_node != None:
+            list_length += 1
+            iter_node = Node.get_next( iter_node )
+        return list_length
+    
+    #Method takes in a LinkedList and returns the middle index of list
+    def get_middle_index(self):
+        if self.head == None:
+            return None
+        list_length = LinkedList.getListLength(self)
+        if list_length <= 2:
+            return 0
+        else:
+            if list_length % 2 == 0:
+                return list_length // 2 - 1
+            else:
+                return list_length // 2
             
+            
+    #Getters
     #Method takes in a LinkedList and returns the data of the head node
     def get_head_data(self):
         return self.head.data
