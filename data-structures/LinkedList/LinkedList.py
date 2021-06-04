@@ -28,10 +28,11 @@ class LinkedList(object):
     def insert(self, newItem):
         if LinkedList.isEmpty(self):
             self.head = Node(newItem)
-            self.tail = self.head
+            self.tail = self.get_head_node()
         else:
-            Node.set_next(self.tail, Node(newItem)) #makes tail of linkedlist point to the new node created
-            self.tail = Node.get_next(self.tail) #updates tail node to the new node created
+            self.tail.set_next( Node(newItem) ) #makes tail of linkedlist point to the new node created
+            self.tail = self.tail.get_next() #updates tail node to the new node created
+            
         
     #Method takes in a LinkedList and returns nothing. Method prints all 'node.data' of each node
     def printList(self):
@@ -40,23 +41,25 @@ class LinkedList(object):
             return
         iter_node = self.head
         while iter_node != None:
-            print(iter_node.data)
-            iter_node = Node.get_next(iter_node)
+            print( iter_node.get_data() )
+            iter_node = iter_node.get_next()
     
     #Method takes in a list and returns an integer length of list
     def getListLength(self):
         list_length = 0
-        iter_node = self.head
+        iter_node = self.get_head_node()
+        if LinkedList.isEmpty(self):
+            return 0
         while iter_node != None:
             list_length += 1
-            iter_node = Node.get_next( iter_node )
+            iter_node = iter_node.get_next()
         return list_length
     
     #Method takes in a LinkedList and returns the middle index of list
     def get_middle_index(self):
         if self.head == None:
             return None
-        list_length = LinkedList.getListLength(self)
+        list_length = self.getListLength()
         if list_length <= 2:
             return 0
         else:

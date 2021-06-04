@@ -27,6 +27,7 @@ def main():
 
     
     print(LL.getListLength() )
+    print(LL.get_middle_index() )
     
 
 
