@@ -1,0 +1,21 @@
+Data Structures:
+
+Array
+Stack
+Queue
+LinkedList
+Heap
+Hash map
+Binary Tree
+Graph
+Triee
+Set
+Disjoint Forrest Set
+
+------------------------------------------------------------
+Topics:
+
+'14 Patterns to Ace Any Coding Interview Question'
+Backtracking
+Greedy
+Dynamic programming
