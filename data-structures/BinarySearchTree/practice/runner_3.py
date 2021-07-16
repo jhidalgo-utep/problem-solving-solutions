@@ -125,7 +125,9 @@ if __name__ == "__main__":
     b = b.insert(30)
     b = b.insert(19)
     b = b.insert(37)
-    b = b.insert(4) 
+    b = b.insert(4)
+    b = b.insert(4)
+    b = b.insert(4)
     
     b.display('')
     

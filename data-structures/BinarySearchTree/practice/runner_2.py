@@ -133,7 +133,7 @@ if __name__ == "__main__":
     print('\n\n')
     
     b = BST()
-    b = b.insert(22)
+    b = b.insert(22)    
     b = b.insert(7)
     b = b.insert(59)
     b = b.insert(13)
