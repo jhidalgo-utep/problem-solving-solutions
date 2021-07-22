@@ -10,14 +10,18 @@ class Heap(object):
         self.item = []
         self.num_of_items = 0
     
+    
     def parent(self, index):
         return (index-1) // 2
+    
     
     def left_child(self, index):
         return (index*2) + 1
     
+    
     def right_child(self, index):
         return (index*2) + 2
+    
     
     def sibbling(self, index):
         if index <= 0:
