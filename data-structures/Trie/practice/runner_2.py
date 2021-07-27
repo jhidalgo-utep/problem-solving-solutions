@@ -5,22 +5,21 @@ Created on Mon Jul 26 19:26:57 2021
 @author: joaqu
 """
 class Node(object):
-    def __init__(self, letter = None):
-        self.letter = letter
+    def __init__(self):
         self.children = {}
         self.is_leaf = False
         
 
 class Trie(object):
     def __init__(self):
-        self.root = Node('*')  
+        self.root = Node()  
         
         
     def insert(self, word):
         iter_node = self.root
         for c in word:
             if c not in iter_node.children:
-                iter_node.children[c] = Node(c)
+                iter_node.children[c] = Node()
             iter_node = iter_node.children[c]
         iter_node.is_leaf = True
         
@@ -55,7 +54,8 @@ if __name__ == "__main__":
     tr.insert("playing")
     tr.insert("play")
     tr.insert("played")
-    print( tr.is_prefix("*") )
+    print( tr.search("playig") )
+    print( tr.is_prefix("played") )
     
     
     
