@@ -4,7 +4,7 @@ Created on Tue Jul 20 22:39:54 2021
 
 @author: joaqu
 """
-
+#using the set by python
 
 if __name__ == "__main__":
     print('start program\n')
