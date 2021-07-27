@@ -4,6 +4,7 @@ Created on Tue Jul 20 23:33:46 2021
 
 @author: joaqu
 """
+#using the hashmap by python aka dictionary
 
 if __name__ == "__main__":
     print('start program\n')
