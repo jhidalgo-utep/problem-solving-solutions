@@ -5,7 +5,7 @@ Contains different data structures that I need to study inorder to pass technica
 
 - [ ] Array
 - [ x ] Stack
-- [X] Queue
+- [ X ] Queue
 - [x] LinkedList
 - [x] Heap
 - [x] Hash map
