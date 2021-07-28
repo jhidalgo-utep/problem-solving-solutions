@@ -4,9 +4,9 @@ Contains different data structures that I need to study inorder to pass technica
 
 
 - [ ] Array
-- [ x ] Stack
-- [ X ] Queue
-- [X] LinkedList
+- [x] Stack
+- [x] Queue
+- [x] LinkedList
 - [x] Heap
 - [x] Hash map
 - [x] Binary Tree
@@ -18,9 +18,9 @@ Contains different data structures that I need to study inorder to pass technica
 ------------------------------------------------------------
 Topics:
 
-- [] '14 Patterns to Ace Any Coding Interview Question'
-- [] Backtracking
-- [] Greedy
-- [] Dynamic programming
-- [] Recursion
-- [] BFS/DFS
+- [ ] '14 Patterns to Ace Any Coding Interview Question'
+- [ ] Backtracking
+- [ ] Greedy
+- [ ] Dynamic programming
+- [ ] Recursion
+- [ ] BFS/DFS
