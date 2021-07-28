@@ -3,9 +3,9 @@
 Contains different data structures that I need to study inorder to pass technical interviews
 
 
-- [] Array
-- [x] Stack
-- [x] Queue
+- [ ] Array
+- [ x ] Stack
+- [X] Queue
 - [x] LinkedList
 - [x] Heap
 - [x] Hash map
