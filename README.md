@@ -23,4 +23,4 @@ Topics:
 - [ ] Greedy
 - [ ] Dynamic programming
 - [ ] Recursion
-- [ ] BFS/DFS
+- [x] BFS/DFS
