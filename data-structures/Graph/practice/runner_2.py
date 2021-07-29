@@ -6,6 +6,7 @@ Created on Sun Jul 25 11:35:35 2021
 """
 import numpy as np
 
+
 class AdjacencyList(object):
     def __init__(self, nodes):
         self.node = nodes
@@ -45,7 +46,43 @@ class AdjacencyList(object):
                 result[self.item[i][j], i ] = True
         return result
 
-
+    
+    #take in an adjceny list, starting point and visit complete
+    def bfs(self, source, visit_complete):
+        queue = [] # iniztilze queue
+        visit_complete.append(source)
+        queue.append(source)
+        
+        while(len(queue) != 0 ):
+            current = queue.pop(0)
+            print(current)
+            
+            for neighbour in self.item[current]:
+                if neighbour not in visit_complete:
+                    visit_complete.append(neighbour)
+                    queue.append(neighbour)
+                    #Here you can: prev[neighbour] = current : to state where you came from
+    
+    
+    #take in an adjceny list, starting point and visit complete
+    def dfs(self, source, visit_complete):
+        stack = [] #initilize stack
+        visit_complete.append(source)
+        stack.append(source)
+        
+        while(len(stack) != 0 ):
+            current = stack.pop()
+            print(current)
+            
+            for neighbour in self.item[current]:
+                if neighbour not in visit_complete:
+                    visit_complete.append(neighbour)
+                    stack.append(neighbour)
+                    #Here you can: prev[neighbour] = current : to state where you came from                                        
+                    
+                    
+##################################
+##################################
 class EdgeList(object):
     def __init__(self, nodes):
         self.node = nodes
@@ -81,7 +118,9 @@ class EdgeList(object):
             # m[self.item[i][1]][self.item[i][0]] = True  # For undirected graph
         return m
     
-    
+
+##################################
+##################################
 class AdjacencyMatrix(object):
     def __init__(self, nodes):
         self.node = nodes
@@ -124,17 +163,22 @@ class AdjacencyMatrix(object):
 
 if __name__ == "__main__":
     print('start program\n')
-    n = ["Jack", "Nano", "Kitty", "Walter", "Maverick"]
+    n = ["Jack", "Nano", "Kitty", "Food", "Water", "Grass", "Treat", "Bread", "Healthy", "Obesse"]
     
-    am = AdjacencyMatrix(n)
-    am.display()
-    am.insert("Jack", "Kitty")
-    am.insert("Jack", "Nano")
-    am.insert(3, 4)
-    am.display()
-    
-    el = am.adj_matrix_to_edge_list()
-    el.display()
-    
+    a = AdjacencyList(n)
+    a.insert("Jack", "Nano")
+    a.insert("Jack", "Kitty")
+    a.insert("Nano", "Food")
+    a.insert("Nano", "Grass")
+    a.insert("Nano", "Treat")
+    a.insert("Kitty", "Water")
+    a.insert("Food", "Obesse")
+    a.insert("Treat", "Bread")
+    a.insert("Water", "Healthy")
+    a.display_nodes()
+    a.display()
+    print()
+    print()
+    a.dfs(0, [] )
     
     
