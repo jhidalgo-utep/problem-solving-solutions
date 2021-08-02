@@ -19,8 +19,8 @@ Contains different data structures that I need to study inorder to pass technica
 Topics:
 
 - [ ] '14 Patterns to Ace Any Coding Interview Question'
-- [ ] Backtracking
-- [ ] Greedy
+- [x] Backtracking
+- [x] Greedy
 - [ ] Dynamic programming
-- [ ] Recursion
+- [x] Recursion
 - [x] BFS/DFS
