@@ -7,81 +7,97 @@ Created on Tue May 27 21:34:02 2021
 
 from Node import Node
 
-# Self explanation:
-# When 'self' is being passed as a parameter, 'self' is the list. 
-# You can use operations like: 'self.head' & 'self.tail' to get a Node from the list.
-# Also by putting 'Node. ' you are able to use operations from the Node.py class like: 'Node.get_next(self.head)' 
-
-
 class LinkedList(object):
-    
-    #Constructor takes in 2 optional parameters that set to 'None' as default
-    def __init__(self, head = None, tail = None):
-        self.head = head # 'head' attribute holds the start of the list
-        self.tail = tail # 'tail' attribute holds the end of the list
+    def __init__(self):
+        self.head = None
+        self.tail = None
         
-    #Method takes in a LinkedList and returns a boolean checking if LinkedList is empty
-    def isEmpty(self):
+    def is_empty(self):
         return self.head == None
-    
-    #Method takes in a LinkedList and integer but returns nothing. Method inserts new node to end of list
-    def insert(self, newItem):
-        if LinkedList.isEmpty(self):
-            self.head = Node(newItem)
-            self.tail = self.get_head_node()
-        else:
-            self.tail.set_next( Node(newItem) ) #makes tail of linkedlist point to the new node created
-            self.tail = self.tail.get_next() #updates tail node to the new node created
-            
         
-    #Method takes in a LinkedList and returns nothing. Method prints all 'node.data' of each node
-    def printList(self):
-        if LinkedList.isEmpty(self):
-            print("EMPTY LINKED LIST")
+    def insert(self, new_item):
+        if self.is_empty():
+            self.head = Node(new_item)
+            self.tail = self.head
+        else:
+            self.tail.next = Node(new_item)
+            self.tail = self.tail.get_next()
+    
+    def display(self):
+        if self == None or self.head == None:
             return
         iter_node = self.head
         while iter_node != None:
-            print( iter_node.get_data() )
+            print(iter_node.get_item(), end = ' ')
             iter_node = iter_node.get_next()
-    
-    #Method takes in a list and returns an integer length of list
-    def getListLength(self):
-        list_length = 0
-        iter_node = self.get_head_node()
-        if LinkedList.isEmpty(self):
+        print()
+
+    def get_list_length(self):
+        if self.is_empty():
             return 0
+        result = 0
+        iter_node = self.head
         while iter_node != None:
-            list_length += 1
+            result += 1
             iter_node = iter_node.get_next()
-        return list_length
+        return result
     
-    #Method takes in a LinkedList and returns the middle index of list
     def get_middle_index(self):
-        if self.head == None:
-            return None
-        list_length = self.getListLength()
-        if list_length <= 2:
+        if self == None:
+            return -1
+        list_len = self.get_list_length()
+        if list_len < 2:
             return 0
+        
+        if list_len % 2 == 0:
+            return ( list_len // 2 ) - 1
         else:
-            if list_length % 2 == 0:
-                return list_length // 2 - 1
-            else:
-                return list_length // 2
+            return list_len // 2
+    
+    # ### Practice!!! ###
+    def reverse_list(self):
+        if self == None or self.is_empty():
+            return
+        if self.head.get_next() == None:
+            return
+        
+        prev = None
+        curr_node = self.head
+        soon_to_be_tail_node = curr_node # save our head, this will be our tail after reverse
+        while curr_node != None:
+            next_node = curr_node.get_next()
+            curr_node.next = prev
+            prev = curr_node
+            curr_node = next_node
             
-            
-    #Getters
-    #Method takes in a LinkedList and returns the data of the head node
-    def get_head_data(self):
-        return self.head.data
+        #update head and tail
+        self.head = prev
+        self.tail = soon_to_be_tail_node
+        
+
+    def delete(self, key_item):
+        if self == None or self.is_empty():
+            return
+        
+        #check head node for key_item
+        if self.head.get_item() == key_item:
+            self.head = self.head.get_next()
+            if self.head == None or self.head.get_next() == None:
+                self.tail = self.head
+            return
+        
+        iter_node = self.head
+        while iter_node != None:
+            if iter_node.get_item() == key_item:
+                break
+            prev = iter_node
+            iter_node = iter_node.get_next()
+        
+        if iter_node == None:
+            return
+        
+        prev.next = iter_node.get_next()
+        if prev.get_next() == None:
+            self.tail = prev    
     
-    #Method takes in a LinkedList and returns the data of the tail node
-    def get_tail_data(self):
-        return self.tail.data
-    
-    #Method takes in a LinkedList and returns the address of the head node
-    def get_head_node(self):
-        return self.head
-    
-    #Method takes in a LinkedList and returns the address of the tail node
-    def get_tail_node(self):
-        return self.tail
+        

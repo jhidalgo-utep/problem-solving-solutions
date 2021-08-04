@@ -7,33 +7,32 @@ Created on Tue May 25 09:43:21 2021
 
 from LinkedList import LinkedList
 
-# Use 'x = LinkedList()' to create a Linked List to manipulate. 
-# Then be able to use methods from LinkedList.py class like: 'x.isEmpty()'.
-
-
-def main():
-    print("Begin main program...\n")
-    
-    LL = LinkedList() #init data struc
-    
-    print( LL.isEmpty() ) 
-
-    LL.insert(55) 
-    LL.insert(33)
-    
-    print( LL.isEmpty() )
-    
-    LL.printList() 
-
-    
-    print(LL.getListLength() )
-    print(LL.get_middle_index() )
-    
-    #promise to code more tomorrow and there after :')
-    
-
-
-#Main Method
 if __name__ == "__main__":
-
-    main()
+    print('start program\n')
+    
+    ll = LinkedList()
+    
+    ll.insert(21)
+    ll.insert(5)
+    ll.insert(44)
+    ll.insert(37)
+    ll.insert(82)
+    
+    ll.display()
+    
+    ll.delete(82)
+    ll.insert(88)
+    
+    ll.display()
+    
+    print('list length: ', ll.get_list_length())
+    
+    ll.reverse_list()
+    ll.display()
+    ll.insert(99)
+    ll.insert(2)
+    ll.display()
+    ll.insert(77)
+    ll.display()
+    
+    
