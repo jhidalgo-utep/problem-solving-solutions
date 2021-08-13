@@ -54,7 +54,7 @@ class LinkedList(object):
         else:
             return list_len // 2
     
-    # ### Practice!!! ###
+
     def reverse_list(self):
         if self == None or self.is_empty():
             return
@@ -82,8 +82,8 @@ class LinkedList(object):
         #check head node for key_item
         if self.head.get_item() == key_item:
             self.head = self.head.get_next()
-            if self.head == None or self.head.get_next() == None:
-                self.tail = self.head
+            # if self.head == None or self.head.get_next() == None:
+            #     self.tail = self.head
             return
         
         iter_node = self.head
@@ -99,5 +99,40 @@ class LinkedList(object):
         prev.next = iter_node.get_next()
         if prev.get_next() == None:
             self.tail = prev    
+            
+    def sort(self):
+        self.head = self.merge_sort(self.head)
+        
+    def merge_sort(self, node):
+        if node == None or node.get_next() == None:
+            return node
+        
+        slow = node
+        fast = slow
+        while fast.next != None and fast.next.next != None:
+            slow = slow.get_next()
+            fast = fast.get_next().get_next()
+            
+        after_mid = slow.next
+        slow.next = None
+        left = LinkedList.merge_sort(None, node)
+        right = LinkedList.merge_sort(None, after_mid)
+        return LinkedList.merge(None, left, right)
+    
+    def merge(self, left_head, right_head):
+        if left_head == None:
+            return right_head
+        if right_head == None:
+            return left_head
+        result = None
+        
+        if left_head.get_item() < right_head.get_item():
+            result = left_head
+            result.next = LinkedList.merge(None, left_head.get_next(), right_head)
+        else:
+            result = right_head
+            result.next = LinkedList.merge(None, left_head, right_head.get_next() )
+        return result
+        
     
         
