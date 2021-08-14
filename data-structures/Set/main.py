@@ -5,6 +5,9 @@ Created on Wed Jul 21 20:01:09 2021
 @author: joaqu
 """
 from Set import Set
+#8 min old
+
+# 6 min new
 
 if __name__ == "__main__":
     
