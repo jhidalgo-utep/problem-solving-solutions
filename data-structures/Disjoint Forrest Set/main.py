@@ -6,6 +6,9 @@ Created on Wed Jul 21 20:31:36 2021
 """
 from DisjointForrestSet import DSF
 
+# 12 min old
+# 9 mins new
+
 if __name__ == "__main__":
     print('start program\n')
     d = DSF(10)

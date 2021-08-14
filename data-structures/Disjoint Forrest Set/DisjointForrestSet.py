@@ -17,7 +17,7 @@ class DSF(object):
             return index
         return self.find_root( self.item[index] )
     
-    ### practice !!! ###
+
     def union_by_size(self, index1, index2):
         if self == None:
             return
