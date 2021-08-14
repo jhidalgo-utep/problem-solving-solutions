@@ -8,7 +8,7 @@ Created on Mon Aug  9 10:28:27 2021
 #  ### Practice !!! ###
 def MergeSort(my_list):
     if len(my_list) <= 1:
-        return my_list
+        return 
     
     mid_index = len(my_list) // 2
     
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     
     test = [45,23,2,90,37,95,45,50,91,26,21]
     
-    mergeSort2(test)
+    MergeSort(test)
     
     print(test)
     
