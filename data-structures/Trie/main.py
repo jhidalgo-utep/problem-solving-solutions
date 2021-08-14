@@ -7,6 +7,9 @@ Created on Mon Jul 26 19:26:30 2021
 
 from Trie import Trie
 
+# 7 mins old
+#  7 mins new
+
 if __name__ == "__main__":
     print('start program\n')
     

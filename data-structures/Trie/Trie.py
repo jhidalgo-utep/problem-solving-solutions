@@ -6,7 +6,6 @@ Created on Tue Aug  3 19:36:59 2021
 """
 from Node import Node
 
-# ### Practice !!! ###
 class Trie(object):
     
     def __init__(self):
