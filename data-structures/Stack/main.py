@@ -5,6 +5,8 @@ Created on Tue Jul 27 16:24:00 2021
 @author: joaqu
 """
 from Stack import Stack
+# 12 mins old
+# 12 mins new
 
 if __name__ == "__main__":
     
@@ -23,6 +25,7 @@ if __name__ == "__main__":
     s.display()
     s.insert(33)
     s.display()
+    print( s.peak() )
     
     
     # use list as stack
