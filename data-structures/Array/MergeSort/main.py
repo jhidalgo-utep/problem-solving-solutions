@@ -5,8 +5,7 @@ Created on Mon Aug  9 10:28:27 2021
 @author: joaqu
 """
 
-
-
+#  ### Practice !!! ###
 def MergeSort(my_list):
     if len(my_list) <= 1:
         return my_list
@@ -40,7 +39,7 @@ def MergeSort(my_list):
         my_list[result_iterator] = right_sub_list[right_pointer_iterator]
         right_pointer_iterator += 1
         result_iterator += 1
-    
+
 
 
 if __name__ == "__main__":
@@ -48,7 +47,7 @@ if __name__ == "__main__":
     
     test = [45,23,2,90,37,95,45,50,91,26,21]
     
-    MergeSort(test)
+    mergeSort2(test)
     
     print(test)
     
