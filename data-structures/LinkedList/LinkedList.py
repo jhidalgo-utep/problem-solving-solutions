@@ -64,6 +64,7 @@ class LinkedList(object):
         prev = None
         curr_node = self.head
         soon_to_be_tail_node = curr_node # save our head, this will be our tail after reverse
+        
         while curr_node != None:
             next_node = curr_node.get_next()
             curr_node.next = prev
