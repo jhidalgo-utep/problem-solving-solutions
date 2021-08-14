@@ -7,6 +7,9 @@ Created on Wed Jul 21 15:34:11 2021
 from Heap import Heap
 import heapq # MIN heap by default  # to use Max-heap, invert all items
 
+#17 mins old 
+# 18 mins new
+
 if __name__ == "__main__":
     print('start program\n')
     
@@ -19,6 +22,7 @@ if __name__ == "__main__":
     # h.insert(28)
     # h.insert(49)
     # h.display()
+    # print('\n')
     ###################################
     
     #  # Use heapq from python library

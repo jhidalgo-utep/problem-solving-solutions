@@ -25,7 +25,7 @@ class Heap(object):
             return -1
         return result
     
-    # ### Practice !!!  ###
+
     def insert(self, new_item):
         self.item.append(new_item)
         index = len(self.item) - 1
