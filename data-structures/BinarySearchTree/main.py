@@ -6,6 +6,8 @@ Created on Tue Jul  6 15:34:21 2021
 """
 from BST import BST
 
+#32 mins
+
 if __name__ == "__main__":
     print('start program')
     b = BST()
