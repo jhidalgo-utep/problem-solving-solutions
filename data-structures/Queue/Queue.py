@@ -11,6 +11,9 @@ class Queue(object):
         self.head = None
         self.tail = None
         self.num_of_items = 0
+        
+    def is_empty(self):
+        return self.head == None
     
     def insert(self, new_item):
         if self.head == None:
