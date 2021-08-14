@@ -6,6 +6,8 @@ Created on Mon Aug  2 16:21:56 2021
 """
 import numpy as np
 
+# 11 min
+
 class AdjacencyList(object):
     def __init__(self, nodes):
         self.node = nodes

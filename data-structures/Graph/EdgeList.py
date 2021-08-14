@@ -6,6 +6,8 @@ Created on Mon Aug  2 17:33:46 2021
 """
 import numpy as np
 
+#12 min
+
 class EdgeList(object):
     def __init__(self, nodes):
         self.node = nodes

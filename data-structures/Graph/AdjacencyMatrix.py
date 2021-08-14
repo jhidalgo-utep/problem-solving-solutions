@@ -6,6 +6,8 @@ Created on Mon Aug  2 17:59:32 2021
 """
 import numpy as np
 
+# 8 mins
+
 class AdjacencyMatrix(object):
     def __init__(self, nodes):
         self.node = nodes
