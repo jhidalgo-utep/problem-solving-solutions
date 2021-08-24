@@ -128,6 +128,24 @@ class BST(object):
                 return self.item
             self = self.right
     
+    
+    # NEEDS TESTING but works on leetcode
+    def preorder_iter(self):
+        stack = []
+        preorder = []
+        visited = []
+        stack.append(self)
+        while stack:
+            current = stack.pop()
+            if current:
+                if current in visited:
+                    preorder.append(self.item)
+                else:
+                    stack.append(self.right)
+                    stack.append(self.left)
+                    stack.append(self)
+                    visited.append(self)
+        return preorder
         
         
 
