@@ -34,6 +34,34 @@ class LinkedList(object):
             self.tail.next = Node(new_item)
             self.tail = self.tail.get_next()
     
+    # 5 - 10 - 7 - 13
+    def insert_after(self, key_item, new_item):
+        if self.is_empty():
+            return
+        iter_node = self.head
+        while iter_node != None:
+            if iter_node.get_item() == key_item:
+                break
+            iter_node = iter_node.get_next()
+        
+        if iter_node == None:
+            return
+        next_node = iter_node.get_next()
+        insertee_node = Node(new_item, next_node)
+        iter_node.next = insertee_node
+        if next_node == None:
+            self.tail = insertee_node
+    
+    def insert_at_begin(self, new_item):
+        if self.is_empty():
+            self.head = Node(new_item)
+            self.tail = self.head
+        else:
+            old_head = self.head
+            insertee_node = Node(new_item, old_head)
+            self.head = insertee_node
+            
+    
     def display(self):
         if self.is_empty():
             return
@@ -66,6 +94,42 @@ class LinkedList(object):
         if prev.next == None:
             self.tail = prev
             
+    # given: [ 8 - 3 - 6 - 9 - 5] and nth: 3.  Result is: [ 8 - 3 - 9 - 5]
+    def remove_nth_node(self, nth):
+        slow = fast = self.head
+        
+        for i in range(nth):
+            fast = fast.get_next()
+        
+        if fast == None:
+            self.head = self.head.get_next()
+            return
+        
+        while fast.get_next() != None:
+            slow = slow.get_next()
+            fast = fast.get_next()
+        
+        slow.next = slow.get_next().get_next()
+        
+        
+    # NEEDS TESTING but works on leetcode
+    def remove_duplicates(self, key_item):
+        iter_node = self.head
+        prev = None
+        while iter_node != None:
+            if iter_node.get_item() == key_item:
+                if prev != None:
+                    next_node = iter_node.get_next()
+                    prev.next = next_node
+                    iter_node = next_node
+                else:
+                    self.head = self.head.next
+                    iter_node = iter_node.get_next()
+            else:
+                prev = iter_node
+                iter_node = iter_node.get_next()
+        
+            
     def reverse(self):
         if self.is_empty() or self.head.get_next() == None:
             return
@@ -82,6 +146,185 @@ class LinkedList(object):
         
         self.head = prev
         self.tail = soon_to_be_tail
+        
+        
+    #assuming there is an intersection
+    # NEEDS TESTING but works on leetcode
+    def get_list_intersect(self, list1, list2):
+        pointer1 = list1.head
+        pointer2 = list2.head
+        len1 = len2 = 0
+        
+        while pointer1 != None:
+            len1 += 1
+            pointer1 = pointer1.get_next()
+        while pointer2 != None:
+            len2 += 1
+            pointer2 = pointer2.get_next()
+        
+        pointer1 = list1.head
+        pointer2 = list2.head
+        
+        for i in range( abs(len1 - len2) ):
+            if len1 > len2:
+                pointer1 = pointer1.get_next()
+            else:
+                pointer2 = pointer2.get_next()
+        
+        while pointer1 != pointer2:
+            pointer1 = pointer1.get_next()
+            pointer2 = pointer2.get_next()
+            
+        return pointer1.get_item()
+    
+    
+    # NEEDS TESTING but works on leetcode
+    def has_cycle(self):
+        if self.head == None or self.head.get_item() == None:
+            return False
+        
+        slow = self.head
+        fast = slow
+        
+        while fast.get_next() != None and fast.get_next().get_next() != None:
+            slow = slow.get_next()
+            fast = fast.get_next().get_next()
+            if slow == fast:
+                return True
+        return False
+    
+    
+    # NEEDS TESTING but works on leetcode
+    def has_cycle_get_start_of(self):
+        if self.head == None or self.head.get_item() == None:
+            return None
+        
+        slow = self.head
+        fast = slow
+        
+        while fast.get_next() != None and fast.get_next().get_next() != None:
+            slow = slow.get_next()
+            fast = fast.get_next().get_next()
+            if slow == fast:
+                break
+        
+        if fast.get_next() == None or fast.get_next().get_next() == None:
+            return None
+        temp = self.head
+        while temp != slow:
+            temp = temp.get_next()
+            slow = slow.get_next()
+        return slow.get_item()
+    
+    # NEEDS TESTING but works on leetcode
+    def odd_even_index_list(self):
+        if self.head == None:
+            return 
+        
+        odd = self.head
+        even = self.head.get_next()
+        even_head = even
+        while odd != None and even != None and even.next != None and odd.next != None:
+            odd.next = even.next
+            odd = odd.next
+            even.next = odd.next
+            even = even.next
+        
+        odd.next = even_head
+        return 
+    
+    
+    # NEEDS TESTING but works on leetcode
+    def is_palindrome(self):
+        if self.head.get_next() == None:
+            return True
+        
+        fast = slow = self.head
+        
+        while fast != None and fast.get_next() != None:
+            slow = slow.next
+            fast = fast.next.next
+        
+        prev = None
+        while slow != None:
+            next_node = slow.get_next()
+            slow.next = prev
+            prev = slow
+            slow = next_node
+        
+        left = head
+        right = prev
+        
+        while right:
+            if left.get_item() != right.get_item():
+                return False
+            left = left.get_next()
+            right = right.get_next()
+        return True
+    
+    
+    # NEEDS TESTING but works on leetcode
+    def rotate_list(self, n):
+        if self.head == None or self.head.get_next() == None or n == 0:
+            return
+        
+        iter_node = self.head
+        list_len = 0
+        while iter_node.get_next() != None:
+            list_len += 1
+            iter_node = iter_node.get_next()
+        list_len += 1
+        
+        rotate_num = n % list_len
+        if rotate_num == 0:
+            return 
+        
+        iter_node.next = self.head
+        
+        iter_node = self.head
+        i = 0
+        while i < list_len - 1 - rotate_num:
+            iter_node = iter_node.get_next()
+            i += 1
+        
+        next_node = iter_node.get_next()
+        iter_node.next = None
+        self.head = next_node
+        
+        
+    # NEEDS TESTING but works on leetcode
+    def add_two_nums(self, list1, list2):
+        carry = 0
+        place_holder = iter_node = Node(-1)
+        
+        while list1 or list2 or carry:
+            v1 = v2 = 0
+            if list1:
+                v1 = list1.get_item()
+                list1 = list1.get_next()
+            if list2:
+                v2 = list2.get_item()
+                list2 = list2.get_next()
+            
+            insertee = v1+v2+carry
+            iter_node.next = Node(insertee % 10)
+            carry = insertee // 10
+            iter_node = iter_node.next
+            
+        return place_holder.next
+    
+    # NEEDS TESTING but works on leetcode
+    def merge_two_lists(self, list1, list2):
+                
+        if not list1 or not list2:
+            return list1 or list2
+        
+        if list1.get_item() < list2.get_item():
+            list1.next = self.mergeTwoLists(list1.get_next(), list2)
+            return list1
+        else:
+            list2.next = self.mergeTwoLists(list1, list2.get_next() )
+            return list2
         
         
     # ### PRACTICE (small adjustment) ###
@@ -133,8 +376,6 @@ class LinkedList(object):
             result += 1
             iter_node = iter_node.get_next()
         return result
-            
-
             
         
         
@@ -197,6 +438,7 @@ if __name__ == "__main__":
     ll.display()
     ll.remove(5)
     ll.display()
+    print('list len: ', ll.get_list_length() , '\n')
     ll.insert(100)
     ll.display()
     ll.remove(100)
@@ -206,10 +448,20 @@ if __name__ == "__main__":
     ll.display()
     ll.insert(18)
     ll.display()
-    print('list len: ', ll.get_list_length() , '\n')
-    
-    ll.head = merge_sort(ll.head)
-    # ll.sort()
+    ll.insert_after(18, 11)
     ll.display()
+    ll.insert(99)
+    ll.display()
+    ll.insert_at_begin(4)
+    ll.display()
+    ll.insert(91)
+    ll.display()
+    ll.remove_nth_node(1)
+    ll.display()
+    
+    
+    # ll.head = merge_sort(ll.head) #  option 1
+    # #ll.sort()  #  option 2
+    # ll.display()
     
     
