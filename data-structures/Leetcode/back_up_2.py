@@ -741,6 +741,7 @@ def find_peak(nums):
             right = mid
         else:
             left = mid + 1
+    return left
             
             
 # Q27: unique num of path
