@@ -81,7 +81,6 @@ class AdjacencyList(object):
             return []                
                 
 
-
 if __name__ == "__main__":
     print('start program\n')
 

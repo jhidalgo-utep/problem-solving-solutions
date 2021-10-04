@@ -440,7 +440,7 @@ def move_zeros(nums):
             zeros += 1
         else:
             nums[left_index] = nums[i]
-            iter_index += 1
+            left_index += 1
     
     for j in range(zeros):
         nums[-j-1] = 0
@@ -536,10 +536,10 @@ def decode_string(string1):
             prev_num = stack.pop()
             prev_string = stack.pop()
             curr_string = prev_string + prev_num * curr_string
-            curr_num = (prev_num*10) + int(c)
         
         elif c.is_digit():
             curr_num = int(c)
+            # curr_num = (prev_num*10) + int(c)
             
         else:
             curr_string += c
@@ -551,18 +551,15 @@ def decode_string(string1):
 # input: 1-D array of 1's and 0's 
 # output: integer of the highest amount of consecutive one's
 def max_consecutive_ones(nums):
-    highest = 0
     consec = 0
-    
+    longest = 0
     for i in nums:
-        if i != 1:
-            highest = max(highest, consec)
-            consec = 0
-        else:
+        if i == 1:
             consec += 1
-            
-    highest = max(consec, highest)
-    return consec
+        else:
+            consec = 0
+        longest = max(longest, consec)
+    return longest
 
 
 # Q22: find pivot

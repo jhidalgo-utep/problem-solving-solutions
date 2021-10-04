@@ -60,8 +60,9 @@ class AdjacencyList(object):
                 if neighbour not in visit_complete:
                     visit_complete.append(neighbour)
                     stack.append(neighbour)
-                    #Here you can: prev[neighbour] = current : to state where you came from   
-            
+                    #Here you can: prev[neighbour] = current : to state where you came from 
+                    
+        
 
 if __name__ == "__main__":
     print('start program\n')

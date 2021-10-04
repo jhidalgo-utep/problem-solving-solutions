@@ -10,18 +10,22 @@ Created on Fri Sep 24 12:20:45 2021
 # output: return an int, being the largest product produced by 3 int's
 
 
+# PRACTICE-
 # Q2: max sum of subarray
 # input: 1-d array of integers both + and -
 # output: return the maximum subarray sum found
 
+
+# PRACTICE 
 # Q3: 3 sum
 # input: an unsorted integer array w/ or w/o duplicates
 # output: a list of 3 number tuplet int's that sum to target (zero), no repeats
 
 
-# Q4: best time to sell stock 2
+
+# Q4: best time to sell stock 1
 # input: daily prices of stocks in a 1-d array of int's
-# output: an integer of the max profit that could be made in all transactions
+# output: an integer of the max profit that could be made in 1 transaction
 
 
 # Q5: best time to sell stock 2
@@ -47,12 +51,12 @@ Created on Fri Sep 24 12:20:45 2021
 # input: integer of how many stairs there are
 # output: integer of how many ways to reach the top by either taking 1 or 2 steps at a time
 
-# Q10: fibonacci sequence
+# Q10: fibonacci sequence (dp)
 # input: integer 'n'
 # output: the fibo number of 'n'
 
 
-# Q11: fibonacci sequence (dp)
+# Q11: fibonacci sequence (O(1) space)
 # input: integer 'n'
 # output: the fibo number of 'n'
 
@@ -61,6 +65,7 @@ Created on Fri Sep 24 12:20:45 2021
 # output: integer, the maximum money that can be stolen not robing house directly next to each other
 
 
+# PRACTICE-
 # Q13: roman string to integer
 # input: string that is written in roman
 # output: integer of the roman string in numbers
@@ -86,15 +91,20 @@ Created on Fri Sep 24 12:20:45 2021
 # input: 2-d 'matrix' array of 1's and 0's
 # output: None, edit 'matrix' in-place replacing the whole row and col where '0' are found
 
+
+# PRACTICE-
 # Q19: longest palindrome
 # input: string 's' made of char's
 # output: string palindrome that is the longest palindrome found in 's'
 
+
+# PRACTICE-
 # Q20: median integer of data stream
 # input: 1-D array of integers called 'nums'
 # output: return the median integer of the data stream
 # MAX heap     -       MIN Heap
 #9, 8, 4, 2    -     10, 14, 15, 17
+
 
 # Q21: word search
 # input: 2-d array of char's called board and a string called 'word'
@@ -104,9 +114,12 @@ Created on Fri Sep 24 12:20:45 2021
 # input: string of char's and space's
 # output: return integer of how many words found in string1
 
+
+# PRACTICE-
 # Q23: t9 text letter possibility combinations
 # input: a string representing a number
 # output: a list of string combinations made from the input representing a number
+
 
 # Q24: find kth largest element
 # input: 1-d array of integers called nums and integer k, representing the kth largest item
@@ -116,17 +129,23 @@ Created on Fri Sep 24 12:20:45 2021
 # input: 1-d array 'nums' of integers that may contain duplicates and integer k 
 # output: return a list of integers of len k, that apear the most frequent in 'nums'
 
+# PRACTICE 
 # Q26: find peak of mountain
 # input: 1-d int array called nums of heights of mounain that go in a straight line
 # output: integer index of the peak of the mountain found in nums array
 
+
+# PRACTICE 
 # Q27: unique num of path
 # input: integer represent rows 'm', and integer representing num of columns 'n'
 # output: integer of the possible ways to reach the bottom right of game board (m x n) only moving 1 right or down
 
+
+# PRACTICE !
 # Q28: longest increasing subsequence
 # input: 1-d array of integers called nums
 # output: return integer of the max numbers of an increasing subsequence inside nums
+
 
 # Q29: rotate image
 # input: 2-d int array

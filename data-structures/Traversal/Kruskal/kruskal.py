@@ -75,22 +75,10 @@ class EdgeList(object):
             # m[self.item[i][1]][self.item[i][0]] = True  # For undirected graph
         return m
     
-    def kruskal2(self):
-        min_span = []
-        ds = DSF(len(self.item) )
-        self.item = sorted(self.item, key = lambda a:a[2] )
-        for e in self.item:
-            if ds.check_same_set(e[0], e[1]) == False:
-                ds.union(e[0], e[1] )
-                min_span.append(e)
-                
-        return e
-    
-    
     
     # edge_list = self.item[edge1,edge1,weight]
     def kruskal(self):
-        self.item = sorted(self.item, key=lambda a: a[2])
+        self.item = sorted(self.item, key=lambda a: a[2]) # practice "key"=lambda
         ds = DisjointForrestSet(len(self.item))
         min_span_tree = []
         for edge in self.item:
@@ -98,6 +86,8 @@ class EdgeList(object):
                 min_span_tree.append(edge)
                 ds.union(edge[0], edge[1])
         return min_span_tree        
+    
+        
     
 
 if __name__ == "__main__":

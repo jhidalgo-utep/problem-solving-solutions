@@ -1,16 +1,16 @@
 Data Structures:
 
-Array
+Array ~
 Stack
 Queue
-LinkedList
-Heap
-Hash map
-Binary Tree
+LinkedList -
+Heap +
+Hash map -
+Binary Tree -
 Graph
 Triee
-Set
-Disjoint Forrest Set
+Set -
+Disjoint Forrest Set +
 
 ------------------------------------------------------------
 Topics:

@@ -61,7 +61,7 @@ class AdjacencyList(object):
                     visit_complete.append(neighbour)
                     queue.append(neighbour)
                     #Here you can: prev[neighbour] = current : to state where you came from
-    
+                    
                     
                     
 if __name__ == "__main__":

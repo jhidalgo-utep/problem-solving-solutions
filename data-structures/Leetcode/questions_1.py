@@ -11,13 +11,13 @@ Created on Wed Sep 15 10:47:17 2021
 # input: array of integers with all nums having a duplicate except 1
 # output: the single number in array that has no duplicates
 
-# PRACTICE !!
+# PRACTICE-
 # Q2: remove duplicates:
 # input: array of int's Sorted w/ or w/o duplicates
 # output: int of length of array w/o duplicates or list of array w/o duplicates
 
 
-# PRACTICE !!
+# PRACTICE-
 # Q3: remove element
 # input: given array of integers and key_item to remove
 # output: return int of length of new list w/o key_item's
@@ -28,7 +28,7 @@ Created on Wed Sep 15 10:47:17 2021
 # output: return index of items from array that sum to target
 
 
-# PRACTICE !!
+# PRACTICE-
 # Q5: longest_substring_no_duplicates
 # input: string
 # output: integer; length of longest non duplicated chars in string
@@ -49,7 +49,7 @@ Created on Wed Sep 15 10:47:17 2021
 # output: Boolean testing if string1 passed as parameter has valid parenthesis
 
 
-# PRACTICE !!
+# PRACTICE-
 # Q9: search rotated array
 # input: array sorted than can be rotated left or right, and a target integer
 # output: Boolean to see if target is inside the rotated array
@@ -64,7 +64,7 @@ Created on Wed Sep 15 10:47:17 2021
 # output: return the polish notation of the given expression
 
 
-#Q12: two sum - sorted
+# Q12: two sum - sorted
 # input: given a nums array sorted and a given target int
 # output: return index of nums in array that equal to target result
 
@@ -104,6 +104,7 @@ Created on Wed Sep 15 10:47:17 2021
 # output: return int index of first non-repeating char
 
 
+# PRACTICE !
 # Q20: decode string
 # input: recieved a string of nums and letters and brackets [,]
 # output: return string of decoded string

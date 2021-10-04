@@ -112,8 +112,13 @@ class BST(object):
             return
         mid_index = len(list_of_item) // 2
         self = BST(list_of_item[mid_index] )
+        
         self.left = BST.build_BST(self.left, list_of_item[:mid_index])
         self.right = BST.build_BST(self.right, list_of_item[mid_index+1:])
+        
+        # These 2 lines work as well
+        # self.left = self.build_BST(my_list[:mid] )
+        # self.right = self.build_BST(my_list[mid+1:] )
         return self        
     
     ### PRACTICE!! ###
@@ -130,5 +135,86 @@ class BST(object):
         if left_sub_tree_height > right_sub_tree_height:
             return left_sub_tree_height + 1
         return right_sub_tree_height + 1
+    
+    
+    def preorder_iter(self):
+        stack = []
+        visited = []
+        preorder = []
+        stack.append(self)
+        while stack:
+            curr = stack.pop()
+            if curr:
+                if curr in visited:
+                    preorder.append(curr.item)
+                else:
+                    stack.append(curr.right)
+                    stack.append(curr.left)
+                    stack.append(curr)
+                    visited.append(curr)
+        return preorder
+    
+    def inorder_iter(self):
+        stack = []
+        visited = []
+        inorder = []
+        stack.append(self)
+        while stack:
+            curr = stack.pop()
+            if curr:
+                if curr in visited:
+                    inorder.append(curr.item)
+                else:
+                    stack.append(curr.right)
+                    stack.append(curr)
+                    stack.append(curr.left)
+                    visited.append(curr)
+        return inorder
+    
+    def postorder_iter(self):
+        stack = []
+        visited = []
+        post = []
+        stack.append(self)
+        while stack:
+            curr = stack.pop()
+            if curr:
+                if curr in visited:
+                    post.append(curr.item)
+                else:
+                    stack.append(curr)
+                    stack.append(curr.right)
+                    stack.append(curr.left)
+                    visited.append(curr)
+        return post
+    
+    def lowest_common_ancestor(self, integer1, integer2):
+        if self == None or self.item == None:
+            return
+        elif self.item > max(integer1, integer2):
+            return BST.lowest_common_ancestor(self.left, integer1, integer2)
+        elif self.item < min(integer1, integer2):
+            return BST.lowest_common_ancestor(self.right, integer1, integer2)
+        return self.item
+    
+    
+    def kth_num(self, k):
+        stack = []
+        
+        while stack or self.item:
+            
+            #go left
+            while self:
+                stack.append(self)
+                self = self.left
+            
+            #get node
+            self = stack.pop()
+            k -=1
+            if k == 0:
+                return self.item
+            
+            #go right
+            self = self.right
         
         

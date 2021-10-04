@@ -6,21 +6,29 @@ Created on Sat Sep 25 13:19:48 2021
 """
 import heapq
 
+# PRACTICE !!!
 # Q1: Maximum Size Subarray Sum Equals k
 # input: 1-d array of int's called 'nums' and integer k
 # output: integer, the longest subarray that equals to k in nums 
 
+
+# PRACTICE !!!
 # Q2: Longest Substring with At Most K Distinct Characters
 # input: string 's' of letters and integer k determing how many distinct letters we can have in dict
 # output: integer of the max length substring possible with k distict letters
 
+
+# PRACTICE !!!
 # Q3: subarray sum equals k
 # input: 1-d array of int's and 'k' the integer sum goal
 # output: return integer of the total amount of continious subarrays that equal to k
 
+
+# PRACTICE !!!
 # Q4: Sliding Window Maximum
 # input: 1-d array of integers and integer 'k' that is the size of the window
 # output: integer array of the all the maximum int's at each combination subarray of size k
+
 
 # Q5: Top K frequent words
 # input: 1-D array of string words and integer k for the amount of top freq. words
