@@ -3,7 +3,7 @@
 Contains different data structures that I need to study inorder to pass technical interviews
 
 
-- [ ] Array
+- [x] Array
 - [x] Stack
 - [x] Queue
 - [x] LinkedList
@@ -18,4 +18,4 @@ Contains different data structures that I need to study inorder to pass technica
 ------------------------------------------------------------
 Topics:
 
-- [ ] '14 Patterns to Ace Any Coding Interview Question'
+- [x] '14 Patterns to Ace Any Coding Interview Question'
