@@ -186,9 +186,6 @@ def max_subarray(nums):
 
 
 
-# Q3: 3 sum
-# input: an unsorted integer array w/ or w/o duplicates
-# output: a list of 3 number tuplet int's that sum to target (zero), no repeats
 def three_sum(nums):
     result = []
     nums.sort()

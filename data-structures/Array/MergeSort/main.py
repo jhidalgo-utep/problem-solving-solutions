@@ -4,8 +4,10 @@ Created on Mon Aug  9 10:28:27 2021
 
 @author: joaqu
 """
-
-#  ### Practice !!! ###
+# 1st we want to split the array in halfs, left and right
+# recursivly call those arrays (left and right) to keep spliting until base case
+# then adjust the array passed in as array
+    
 def MergeSort(my_list):
     if len(my_list) <= 1:
         return 
@@ -15,6 +17,8 @@ def MergeSort(my_list):
     left_sub_list = my_list[:mid_index]
     right_sub_list = my_list[mid_index:]
     
+    #since we are passing in the left & right sub-arrays, its those arrays that we are modifying
+    #and the Newly modified left & right, is what we use to fill up our original my_list array
     MergeSort(left_sub_list)
     MergeSort(right_sub_list)
     

@@ -203,7 +203,7 @@ class BST(object):
         
         while stack or self.item:
             
-            #go left
+            #if you go off the deep end, self will not have a 'self.item' so use 'self'
             while self:
                 stack.append(self)
                 self = self.left

@@ -548,9 +548,81 @@ def right_side(root):
         if right_side:
             res.append(right_side)
     return res
-        
-        
+
+
+# Q3: subarray sum equals k
+# input: 1-d array of int's and 'k' the integer sum goal
+# output: return integer of the total amount of continious subarrays that equal to k
+def subarray_equals_k(nums, k):
+    d = dict()
+    d[0] = 1
     
+    count = 0
+    prefix = 0
+    for i in nums:
+        prefix += i
+        
+        diff = prefix - k
+        if diff in d:
+            count += d[diff]
+        
+        if prefix in d:
+            d[prefix ] += 1
+        else:
+            d[prefix] = 1
+    return count
+        
+
+
+
+# Q1: Maximum Size Subarray Sum Equals k
+# input: 1-d array of int's called 'nums' and integer k
+# output: integer, the longest subarray that equals to k in nums 
+def maximum_size_subarray_equals_k(nums, k):
+    longest = 0
+    prefix = 0
+    d = dict()
+    
+    for i in range(len(nums)):
+        prefix += 1
+        
+        if prefix == k:
+            longest = i+1
+        
+        if prefix - k in d:
+            longest = max(longest, i - d[prefix-k])
+        
+        if prefix not in d:
+            d[prefix] = i
+            
+    return longest
+
+
+# Q2: Longest Substring with At Most K Distinct Characters
+# input: string 's' of letters and integer k determing how many distinct letters we can have in dict
+# output: integer of the max length substring possible with k distict letters
+def longest_substring_k_distinct_char(s, k):
+    d = dict()
+    left = 0
+    max_len = 0
+    
+    for right in range(len(s)):
+        
+        if s[right] in d:
+            d[s[right]] += 1
+        else:
+            d[s[right]] = 1
+        
+        
+        while left < right and len(d) > k:
+            if d[s[left]] == 1:
+                del d[s[left]]
+            else:
+                d[s[left]] -= 1
+            left += 1
+        
+        max_len = max(max_len, right - left + 1)
+    return max_len
     
     
         

@@ -25,6 +25,7 @@ class DSF(object):
         r2 = self.find_root(index2)
         if r1 != r2:
             if self.item[r1] < self.item[r2]:
+                # we add to self.item[r1] b/c we need to carry the weight of self.item[r2]
                 self.item[r1] += self.item[r2]
                 self.item[r2] = r1
             else:

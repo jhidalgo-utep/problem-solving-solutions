@@ -6,19 +6,19 @@ Created on Sat Sep 25 13:19:48 2021
 """
 import heapq
 
-# PRACTICE !!!
+# PRACTICE !
 # Q1: Maximum Size Subarray Sum Equals k
 # input: 1-d array of int's called 'nums' and integer k
 # output: integer, the longest subarray that equals to k in nums 
 
 
-# PRACTICE !!!
+# PRACTICE
 # Q2: Longest Substring with At Most K Distinct Characters
-# input: string 's' of letters and integer k determing how many distinct letters we can have in dict
+# input: string 's' of letters and integer k determing how many distinct letters we can have at a time
 # output: integer of the max length substring possible with k distict letters
 
 
-# PRACTICE !!!
+# PRACTICE
 # Q3: subarray sum equals k
 # input: 1-d array of int's and 'k' the integer sum goal
 # output: return integer of the total amount of continious subarrays that equal to k
@@ -33,6 +33,7 @@ import heapq
 # Q5: Top K frequent words
 # input: 1-D array of string words and integer k for the amount of top freq. words
 # output: a list of the top 'k' frequent words
+
 
 # Q6: is palidrome (integer)
 # input: integer above zero
@@ -52,7 +53,7 @@ def max_subarray_length_k(nums, k):
     
     for i in range(len(nums) ): 
         prefix_sum += nums[i] 
-    
+
         if prefix_sum == k:
             longest_subarray = i+1 
         
@@ -113,15 +114,24 @@ def subarray_sum_equal_k(nums, k):
     for i in range(len(nums) ):
         prefix_sum += nums[i]
         
-        if prefix_sum - k in d:
-            count += d[prefix_sum - k]
-        
+        #check if difference is in dictionary
+        diff = prefix_sum - k
+        if diff in d:
+            count += d[diff]
+            
+        #Add prefix sum to dictionary
         if prefix_sum in d:
             d[prefix_sum] += 1
         else:
             d[prefix_sum] = 1
     
+    print(d)
     return count
+
+if __name__ == "__main__":
+    q3 = [3,5,1,1,7,14,8]
+    print( subarray_sum_equal_k(q3, 8) )
+    
         
 
 

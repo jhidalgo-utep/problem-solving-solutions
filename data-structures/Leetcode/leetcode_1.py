@@ -209,6 +209,14 @@ def remove_element(nums, key):
             left += 1
     return nums[:left]
 
+    # Linear Time
+    # left = 0
+    # for i in range(len(nums) ):
+    #     if nums[i] != key:
+    #         nums[left] = nums[i]
+    #         left += 1
+    # return nums[:left]
+
 
 # Q4: two sum
 # inputs: array of int's and target int
@@ -387,7 +395,7 @@ def two_sum_sorted(nums, target):
         elif nums[left] + nums[right] < target:
             left += 1
         else:
-            right += 1
+            right -= 1
             
 # Q13: number of islands
 # input: given a 2-D array of 1's and 0's that represent land - 1 and water - 0

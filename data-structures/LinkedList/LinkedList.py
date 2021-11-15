@@ -102,6 +102,7 @@ class LinkedList(object):
         
         for i in range(n):
             fast = fast.get_next()
+            # can also used: i != n-1
             if fast == None and i < n-1:
                 return False
         

@@ -116,7 +116,8 @@ class LinkedList(object):
         slow = fast = self.head 
         for i in range(n):
             fast = fast.get_next()
-            if fast == None and i < n-1:
+            print(i)
+            if fast == None and i != n-1:
                 return
             
         if fast == None:
@@ -178,7 +179,7 @@ class LinkedList(object):
             else:
                 l2 = l2.get_next()
         
-        while l1.get_item() != l2.get_item()
+        while l1.get_item() != l2.get_item():
             l1 = l1.get_next()
             l2 = l2.get_next()
             if l1 == None or l2 == None:
@@ -398,5 +399,6 @@ if __name__ == "__main__":
     ll.insert(21)
     ll.display()
     
-    ll.remove_nth(7)
+    
+    ll.remove_nth(5)
     ll.display()

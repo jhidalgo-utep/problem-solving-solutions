@@ -17,4 +17,6 @@ if __name__ == "__main__":
     d.display()
     d.union_by_size(3, 8)
     d.display()
+    d.union_by_size(8,5)
+    d.display()
     print(d.num_of_sets() )
