@@ -1,0 +1,18 @@
+Queue ~ EASY
+BST ~ HARD (Smallest recursive) go back to it
+Graph - go back to it...
+Array
+LinkedList !
+Set ~
+Trie ~
+Disjoint FS  !
+Stack ~
+Traversal  !!
+HashMap ~
+LeetCode !!
+
+
+
+
+
+
